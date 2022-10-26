@@ -1,0 +1,206 @@
+{
+    "ABSTRACTION_LEVEL": 3,
+    "DESCRIPTION": "",
+    "NAME": "TestQuad",
+    "TOPOLOGY": {
+        "BatteryController_instance_1": {
+            "CONNECTIONS": {
+                "Battery_UAV_instance_1": "ANY",
+                "Battery_UAV_instance_2": "ANY",
+                "Motor_instance_1": "ANY",
+                "Motor_instance_2": "ANY",
+                "Motor_instance_3": "ANY",
+                "Motor_instance_4": "ANY"
+            },
+            "PARAMETERS": {}
+        },
+        "Battery_UAV_instance_1": {
+            "CONNECTIONS": {
+                "capsule_fuselage_instance_1": "BOTTOM-1"
+            },
+            "PARAMETERS": {}
+        },
+        "Battery_UAV_instance_2": {
+            "CONNECTIONS": {
+                "capsule_fuselage_instance_1": "BOTTOM-2"
+            },
+            "PARAMETERS": {}
+        },
+        "ControlBox_instance_1": {
+            "CONNECTIONS": {},
+            "PARAMETERS": {}
+        },
+        "Flange_instance_1": {
+            "CONNECTIONS": {
+                "Tube_instance_1": "BOTTOM-BOTTOM",
+                "Tube_instance_5": "SIDE-TOP"
+            },
+            "PARAMETERS": {}
+        },
+        "Flange_instance_2": {
+            "CONNECTIONS": {
+                "Motor_instance_1": "ANY",
+                "Tube_instance_4": "SIDE-TOP",
+                "Tube_instance_6": "BOTTOM-BOTTOM"
+            },
+            "PARAMETERS": {}
+        },
+        "Flange_instance_3": {
+            "CONNECTIONS": {
+                "Motor_instance_2": "ANY",
+                "Tube_instance_2": "BOTTOM-BOTTOM",
+                "Tube_instance_7": "SIDE-TOP"
+            },
+            "PARAMETERS": {}
+        },
+        "Flange_instance_4": {
+            "CONNECTIONS": {
+                "Tube_instance_3": "SIDE-TOP",
+                "Tube_instance_8": "BOTTOM-BOTTOM"
+            },
+            "PARAMETERS": {}
+        },
+        "Hub4_instance_1": {
+            "CONNECTIONS": {
+                "Orient": "ANY",
+                "Tube_instance_3": "SIDE1-BOTTOM",
+                "capsule_fuselage_instance_1": "TOP"
+            },
+            "PARAMETERS": {
+                "Hub3__ANGHORZCONN": 120.0,
+                "Orient__Z_ANGLE": 0.0,
+                "Tube__Length": 100.0,
+                "Tube__Offset1": 0.0,
+                "Wing__CHORD_1": 250.0,
+                "Wing__CHORD_2": 250.0,
+                "Wing__SPAN": 1000.0,
+                "Wing__TUBE_OFFSET": 100.0,
+                "capsule_fuselage__BOTTOM_CONNECTOR_ROTATION": 0.0,
+                "capsule_fuselage__FLOOR_HEIGHT": 50.0,
+                "capsule_fuselage__HORZ_DIAMETER": 500.0,
+                "capsule_fuselage__TUBE_LENGTH": 500.0,
+                "capsule_fuselage__VERT_DIAMETER": 100.0
+            }
+        },
+        "Motor_instance_1": {
+            "CONNECTIONS": {
+                "Propeller_instance_4": "ANY"
+            },
+            "PARAMETERS": {}
+        },
+        "Motor_instance_2": {
+            "CONNECTIONS": {
+                "Propeller_instance_3": "ANY"
+            },
+            "PARAMETERS": {}
+        },
+        "Motor_instance_3": {
+            "CONNECTIONS": {
+                "Flange_instance_4": "ANY",
+                "Propeller_instance_2": "ANY"
+            },
+            "PARAMETERS": {}
+        },
+        "Motor_instance_4": {
+            "CONNECTIONS": {
+                "Flange_instance_1": "ANY",
+                "Propeller_instance_1": "ANY"
+            },
+            "PARAMETERS": {}
+        },
+        "Orient": {
+            "CONNECTIONS": {},
+            "PARAMETERS": {
+                "Orient__Z_ANGLE": 45.0
+            }
+        },
+        "Propeller_instance_1": {
+            "CONNECTIONS": {},
+            "PARAMETERS": {}
+        },
+        "Propeller_instance_2": {
+            "CONNECTIONS": {},
+            "PARAMETERS": {}
+        },
+        "Propeller_instance_3": {
+            "CONNECTIONS": {},
+            "PARAMETERS": {}
+        },
+        "Propeller_instance_4": {
+            "CONNECTIONS": {},
+            "PARAMETERS": {}
+        },
+        "Tube_instance_1": {
+            "CONNECTIONS": {},
+            "PARAMETERS": {
+                "Tube__Length": 95.0,
+                "Tube__Offset1": 0.0
+            }
+        },
+        "Tube_instance_2": {
+            "CONNECTIONS": {},
+            "PARAMETERS": {
+                "Tube__Length": 95.0,
+                "Tube__Offset1": 0.0
+            }
+        },
+        "Tube_instance_3": {
+            "CONNECTIONS": {},
+            "PARAMETERS": {
+                "Tube__Length": 220.0,
+                "Tube__Offset1": 0.0
+            }
+        },
+        "Tube_instance_4": {
+            "CONNECTIONS": {
+                "Hub4_instance_1": "BOTTOM-SIDE4"
+            },
+            "PARAMETERS": {
+                "Tube__Length": 220.0,
+                "Tube__Offset1": 0.0
+            }
+        },
+        "Tube_instance_5": {
+            "CONNECTIONS": {
+                "Hub4_instance_1": "BOTTOM-SIDE3"
+            },
+            "PARAMETERS": {
+                "Tube__Length": 220.0,
+                "Tube__Offset1": 0.0
+            }
+        },
+        "Tube_instance_6": {
+            "CONNECTIONS": {},
+            "PARAMETERS": {
+                "Tube__Length": 95.0,
+                "Tube__Offset1": 0.0
+            }
+        },
+        "Tube_instance_7": {
+            "CONNECTIONS": {
+                "Hub4_instance_1": "BOTTOM-SIDE2"
+            },
+            "PARAMETERS": {
+                "Tube__Length": 220.0,
+                "Tube__Offset1": 0.0
+            }
+        },
+        "Tube_instance_8": {
+            "CONNECTIONS": {},
+            "PARAMETERS": {
+                "Tube__Length": 95.0,
+                "Tube__Offset1": 0.0
+            }
+        },
+        "capsule_fuselage_instance_1": {
+            "CONNECTIONS": {},
+            "PARAMETERS": {
+                "capsule_fuselage__BOTTOM_CONNECTOR_ROTATION": 45.0,
+                "capsule_fuselage__FLOOR_HEIGHT": 20.0,
+                "capsule_fuselage__HORZ_DIAMETER": 145.0,
+                "capsule_fuselage__TUBE_LENGTH": 100.0,
+                "capsule_fuselage__VERT_DIAMETER": 90.0
+            }
+        }
+    }
+}

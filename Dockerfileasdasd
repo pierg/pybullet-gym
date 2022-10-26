@@ -1,0 +1,44 @@
+FROM ubuntu:20.04
+
+RUN apt-get update --fix-missing
+
+RUN DEBIAN_FRONTEND="noninteractive" apt-get install tzdata -y
+
+RUN apt-get install -y wget bzip2 ca-certificates curl git libgl1-mesa-glx
+
+RUN apt-get -y install libopenmpi-dev zlib1g-dev cmake libglib2.0-0\
+  libsm6 libxext6 libfontconfig1 libxrender1 swig build-essential libgtk2.0-0\
+  libgl1-mesa-dev libglu1-mesa-dev x11-xserver-utils
+
+# Install python3.8.
+RUN apt-get install software-properties-common -y
+RUN add-apt-repository ppa:deadsnakes/ppa -y
+RUN apt-get install python3.8 -y
+
+# Make python3.8 the default python.
+RUN rm /usr/bin/python3
+RUN ln -s /usr/bin/python3.8 /usr/bin/python3
+RUN ln -s /usr/bin/python3.8 /usr/bin/python
+RUN apt-get install python3.8-distutils -y
+
+# Install pip.
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN python get-pip.py
+RUN rm get-pip.py
+
+WORKDIR /code
+
+# Setup SSH with secure root login
+RUN apt-get update \
+ && apt-get install -y openssh-server netcat \
+ && mkdir /var/run/sshd \
+ && echo 'root:password' | chpasswd \
+ && sed -i 's/\#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]
