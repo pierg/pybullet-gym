@@ -23,17 +23,10 @@ env = gym.make('QuadrotorPlusHoverEnv-v0')
 env.render()  # call this before env.reset, if you want a window showing the environment
 env.reset()  # should return a state vector if everything worked
 
-model = PPO("MlpPolicy", env, verbose=1)
-model.learn(total_timesteps=10_000)
 
-obs = env.reset()
-for i in range(1000):
-    action, _states = model.predict(obs, deterministic=True)
-    obs, reward, done, info = env.step(action)
-    if (i % 100) == 0:
-        print(f"Rendering...{i}")
-        env.render()
-    if done:
-        obs = env.reset()
-
-env.close()
+for i in range(10000):
+    env.step(env.action_space.sample())
+    print(i)
+    time.sleep(0.5)
+    env.render()
+    print(f"rendered {i}")

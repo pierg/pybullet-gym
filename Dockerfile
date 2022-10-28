@@ -1,27 +1,14 @@
-# nainstaluj Ubuntu 20.04 LTS
-FROM thewtex/opengl
-
-# nastav jazyk
+FROM accetto/ubuntu-vnc-xfce-g3:latest-fugo
+USER root
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
-
-# nastav apt-get
 ARG DEBIAN_FRONTEND=noninteractive
-
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install tzdata -y
-RUN apt-get install git wget libgl1-mesa-glx -y
-
-###########################################
-# Dependencies
-###########################################
 RUN apt-get update && apt-get install -y \
     curl \
     git \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
-
-#RUN curl -O https://bootstrap.pypa.io/get-pip.py
-#RUN python3 get-pip.py
-
+# Test OpenGL by running "glxgears"
 RUN apt update && apt-get install -y mesa-utils
 
 

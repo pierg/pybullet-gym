@@ -1,11 +1,10 @@
-import gym  # open ai gym
-import pybulletgym  # register PyBullet enviroments with open ai gym
+import gym
+import time
 from stable_baselines3 import PPO
 
-env = gym.make('HumanoidPyBulletEnv-v0')
-env.render() # call this before env.reset, if you want a window showing the environment
-env.reset()  # should return a state vector if everything worked
-
+env = gym.make('CartPole-v0')
+env.render()
+env.reset()
 model = PPO("MlpPolicy", env, verbose=1)
 model.learn(total_timesteps=10_000)
 
